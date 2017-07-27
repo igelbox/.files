@@ -18,3 +18,5 @@ prompt_dir() {
 }
 
 zstyle ":completion:*:commands" rehash 1
+
+TERM=xterm-256color
