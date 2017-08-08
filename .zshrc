@@ -16,6 +16,15 @@ DEFAULT_USER=`whoami`
 prompt_dir() {
   prompt_segment cyan black "%-40<...<%2~%<<"
 }
+prompt_status() {
+  local symbols
+  symbols=()
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
+  [[ $RETVAL -eq 0 ]] && symbols+=" "
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+
+  [[ -n "$symbols" ]] && prompt_segment cyan default "$symbols"
+}
 
 zstyle ":completion:*:commands" rehash 1
 
