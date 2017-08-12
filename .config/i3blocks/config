@@ -1,0 +1,25 @@
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[memory]
+label=Ma:
+separator=false
+interval=10
+
+[memory]
+label=Su:
+instance=swap
+separator=true
+interval=10
+
+[disk]
+label=D:
+interval=30
+
+[load_average]
+interval=2
+
+[time]
+command=date '+%d %H:%M'
+interval=5
