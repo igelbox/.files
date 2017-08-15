@@ -26,3 +26,6 @@ mode "$mode_launch" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Ctrl+r mode "$mode_launch"
+
+workspace_layout tabbed
+hide_edge_borders smart
