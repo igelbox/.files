@@ -5,6 +5,10 @@ bindsym $mod+Ctrl+s exec --no-startup-id killall -USR1 redshift
 bindsym $mod+Ctrl+e exec pcmanfm
 bindsym $mod+Ctrl+Escape exec termite -e htop -t htop
 
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3-power lock, mode "default"
