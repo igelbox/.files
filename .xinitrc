@@ -8,4 +8,4 @@ feh --bg-scale /usr/share/backgrounds/archlinux/archlinux-berry.jpg --no-fehbg
 /usr/lib/notify-osd/notify-osd &
 numlockx
 
-i3
+dbus-launch i3
