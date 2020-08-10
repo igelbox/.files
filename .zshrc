@@ -12,12 +12,13 @@ if [[ ${TERM} != "linux" ]]; then
   POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='cyan'
   POWERLEVEL9K_DIR_HOME_BACKGROUND='cyan'
   POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='cyan'
-  source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel9k.zsh-theme
 fi
 
 zstyle ":completion:*:commands" rehash 1
 
-source $HOME/.bin/antigen.zsh
+#source $HOME/.bin/antigen.zsh
+source /usr/share/zsh/share/antigen.zsh
 
 antigen use oh-my-zsh
 
