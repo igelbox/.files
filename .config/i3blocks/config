@@ -1,24 +1,31 @@
-command=/usr/lib/i3blocks/$BLOCK_NAME
+command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[memory]
-label=Ma:
-separator=false
-interval=10
+[temperature]
+interval=20
+
+[battery2]
+interval=20
+markup=pango
 
 [memory]
-label=Su:
-instance=swap
-separator=true
+label=Ma:
+#command=free -m | grep Mem | awk \'{printf "%.1f", $7/1024}\'
+#separator=false
 interval=10
 
 [disk]
 label=D:
 interval=30
+command=echo "$(df -hPBG | grep 1p5 | tail -n1 | awk '{print $4}')/$(df -hPBG | grep 1p4 | tail -n1 | awk '{print $4}')"
 
 [load_average]
 interval=2
+
+[capture]
+command=i3block-capture
+interval=5
 
 [time]
 command=date '+%d %H:%M'
@@ -26,5 +33,9 @@ interval=5
 
 [volume]
 label=
-command=/usr/lib/i3blocks/volume
 interval=5
+
+[bandwidth3]
+command=/usr/lib/i3blocks/bandwidth3/bandwidth3 -p "printf \" %.1f/%.1f\n\", rx, wx;"
+interval=persist
+markup=pango

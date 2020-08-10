@@ -1,0 +1,37 @@
+#!/bin/bash
+COLOR_STOP="#505050"
+COLOR_PLAY="#FF0000"
+
+full_text="R"
+color="$COLOR_STOP"
+
+cmd="ffmpeg -framerate 60 -f x11grab -i :0.0 -c:v h264_nvenc -preset lossless -pix_fmt yuv444p"
+pid=$(ps -eo pid,args | grep -- "$cmd" | grep -v grep | awk '{print $1}')
+
+if [[ -n $pid ]]; then
+  color="$COLOR_PLAY"
+  full_text="REC"
+
+  if [[ "$BLOCK_BUTTON" == "1" ]]; then
+    kill -SIGTERM $pid
+    color="$COLOR_STOP"
+  fi
+else
+  case $BLOCK_BUTTON in
+  1)
+    eval "$cmd /tmp/capture-$(date +%Y%m%d-%H%M%S).mkv" 2>/dev/null 1>/dev/null &disown
+    color="$COLOR_PLAY"
+    full_text="REC"
+    ;; # left click
+  3)
+    xdg-open /tmp &
+    ;; # right click
+  esac
+fi
+
+short_text="$full_text"
+echo "$short_text"
+echo "$full_text"
+echo "$color"
+
+exit 0
