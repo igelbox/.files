@@ -24,7 +24,7 @@ else
     full_text="REC"
     ;; # left click
   3)
-    xdg-open /tmp &
+    xdg-open /tmp &disown
     ;; # right click
   esac
 fi
