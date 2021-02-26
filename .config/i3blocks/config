@@ -9,8 +9,17 @@ interval=20
 interval=20
 markup=pango
 
+[cpu_usage2]
+markup=pango
+interval=persist
+LABEL=
+REFRESH_TIME=2
+WARN_PERCENT=8
+CRIT_PERCENT=50
+DECIMALS=0
+
 [memory]
-label=Ma:
+label=M:
 #command=free -m | grep Mem | awk \'{printf "%.1f", $7/1024}\'
 #separator=false
 interval=10
@@ -18,10 +27,7 @@ interval=10
 [disk]
 label=D:
 interval=30
-command=echo "$(df -hPBG | grep 1p5 | tail -n1 | awk '{print $4}')/$(df -hPBG | grep 1p4 | tail -n1 | awk '{print $4}')"
-
-[load_average]
-interval=2
+command=echo "$(df -hPBG | grep "/$" | tail -n1 | awk '{print $4}')+$(df -hPBG | grep "/home" | tail -n1 | awk '{print $4}')"
 
 [capture]
 command=i3block-capture
