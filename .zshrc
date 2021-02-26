@@ -1,5 +1,10 @@
 export VISUAL=vim
 export HISTFILE=~/.zhistory
+export NODE_OPTIONS="$NODE_OPTIONS --max_old_space_size=1024"
+export JAVA_OPTS="-Xmx384m"
+export HISTSIZE=10000
+export HIST_IGNORE_ALL_DUPS=1
+export HIST_IGNORE_SPACE=1
 
 DEFAULT_USER=`whoami`
 
