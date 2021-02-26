@@ -11,11 +11,12 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+set $mode_system System (l)ock, (e)xit logout, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3-power lock, mode "default"
     bindsym e exec --no-startup-id i3-power logout, mode "default"
     bindsym s exec --no-startup-id i3-power suspend, mode "default"
+    bindsym h exec --no-startup-id i3-power hibernate, mode "default"
     bindsym r exec --no-startup-id i3-power reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3-power shutdown, mode "default"
 
@@ -35,3 +36,4 @@ bindsym $mod+Ctrl+r mode "$mode_launch"
 
 workspace_layout tabbed
 hide_edge_borders smart
+#mouse_warping none
