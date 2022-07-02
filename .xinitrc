@@ -2,7 +2,7 @@
 xrandr --auto --dpi 192
 #xrandr --auto --dpi 192 --output eDP --scale 1.25x1.25
 #export GDK_SCALE=2
-#export GDK_DPI_SCALE=1.5
+export GDK_DPI_SCALE=1.6
 export QT_FONT_DPI=192
 export PATH=$PATH:$HOME/.bin/:$HOME/.nvm/versions/node/xprofile/bin
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
