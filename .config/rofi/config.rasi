@@ -1,0 +1,6 @@
+configuration {
+ font: "Droid Sans Mono for Powerline Bold 15";
+ modi: "window,drun,ssh,combi";
+ combi-modi: "drun,window,ssh";
+ }
+@theme "glue_pro_blue"

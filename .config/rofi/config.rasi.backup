@@ -1,0 +1,8 @@
+#@theme: "Arc-Dark";
+configuration {
+ font: "monospace 10";
+ modi: "window,run";
+ combi-modi: "drun,window";
+ terminal: "termite";
+ run-shell-command: "{terminal} -e \"bash -c \\"{cmd}; read -n 1\\"\"";
+}
