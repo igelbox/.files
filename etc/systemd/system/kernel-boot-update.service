@@ -1,0 +1,6 @@
+[Unit]
+Description=Copies Kernel and RamDisk to the boot partition
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c "cp -f /boot/{vmlinuz-linux-t2,initramfs-linux-t2.img,initramfs-linux-t2-fallback.img} /efi/"

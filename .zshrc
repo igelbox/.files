@@ -11,6 +11,8 @@ DEFAULT_USER=`whoami`
 if [[ ${TERM} != "linux" ]]; then
   TERM=xterm-256color
 
+  POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+  POWERLEVEL9K_SHORTEN_STRATEGY='truncate_to_unique'
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs root_indicator background_jobs time)
   POWERLEVEL9K_MODE='awesome-fontconfig'

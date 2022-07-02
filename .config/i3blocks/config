@@ -27,7 +27,8 @@ interval=10
 [disk]
 label=D:
 interval=30
-command=echo "$(df -hPBG | grep "/$" | tail -n1 | awk '{print $4}')+$(df -hPBG | grep "/home" | tail -n1 | awk '{print $4}')"
+#command=echo "$(df -hPBG | grep "/$" | tail -n1 | awk '{print $4}')+$(df -hPBG | grep "/home" | tail -n1 | awk '{print $4}')"
+command=echo "$(df -hPBG | grep "/$" | tail -n1 | awk '{print $4}')"
 
 [capture]
 command=i3block-capture
