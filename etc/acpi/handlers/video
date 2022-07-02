@@ -1,0 +1,10 @@
+#!/bin/sh
+
+bl_dev=/sys/class/backlight/acpi_video0
+step=10
+
+case $2 in
+  BRTDN) echo $(($(< $bl_dev/brightness) - $step)) >$bl_dev/brightness;;
+  BRTUP) echo $(($(< $bl_dev/brightness) + $step)) >$bl_dev/brightness;;
+esac
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+bl_dev=/sys/devices/pci0000:00/0000:00:1b.0/0000:04:00.1/apple-bce/apple-bce/bce-vhci/usb1/1-6/1-6:1.0/0003:05AC:8302.0007/leds/apple::kbd_backlight
+step=10
+
+case $2 in
+  KBILLUMDOWN) echo $(($(< $bl_dev/brightness) - $step)) >$bl_dev/brightness;;
+  KBILLUMUP) echo $(($(< $bl_dev/brightness) + $step)) >$bl_dev/brightness;;
+esac
+

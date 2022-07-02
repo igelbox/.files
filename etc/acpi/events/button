@@ -1,0 +1,3 @@
+event=button/*
+action=/etc/acpi/handlers/button %e
+
